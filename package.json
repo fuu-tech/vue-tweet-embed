@@ -5,12 +5,12 @@
   "main": "dist",
   "scripts": {
     "test": "ava --serial --verbose --no-power-assert",
-    "pretest": "eslint src && npm run build && npm run preexamples",
+    "_pretest": "eslint src && npm run build && npm run preexamples",
     "prebuild": "npm run clean",
     "build": "babel src --out-dir dist",
     "clean": "rimraf dist",
-    "prepublish": "npm test && npm run clean && npm run build",
-    "preexamples": "cd examples; ls | xargs -n1 -I% npx webpack-cli --mode=development %/index.js -o %/index.build.js",
+    "_prepublish": "npm test && npm run clean && npm run build",
+    "_preexamples": "cd examples; ls | xargs -n1 -I% npx webpack-cli --mode=development %/index.js -o %/index.build.js",
     "examples": "node example_server.js"
   },
   "repository": {
