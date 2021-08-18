@@ -1,3 +1,5 @@
+const { h } = require(`vue`);
+
 let addScriptPromise = 0
 
 /** Adds proviced script to the page, once **/
@@ -56,7 +58,7 @@ const twitterEmbedComponent = (me) => {
                     this.isLoaded = true
                 })
         },
-        render(h) {
+        render() {
             if (this.isLoaded && this.isAvailable) {
                 return h('div', { class: this.$props.widgetClass })
             }

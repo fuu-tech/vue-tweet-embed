@@ -1,5 +1,8 @@
 "use strict";
 
+var _require = require("vue"),
+    h = _require.h;
+
 var addScriptPromise = 0;
 /** Adds proviced script to the page, once **/
 
@@ -30,9 +33,8 @@ var defaultProps = {
     type: String
   },
   options: Object
-  /** Basic function used to mount Twitter component */
-
 };
+/** Basic function used to mount Twitter component */
 
 var twitterEmbedComponent = function twitterEmbedComponent(me) {
   return {
@@ -70,7 +72,7 @@ var twitterEmbedComponent = function twitterEmbedComponent(me) {
         _this.isLoaded = true;
       });
     },
-    render: function render(h) {
+    render: function render() {
       if (this.isLoaded && this.isAvailable) {
         return h('div', {
           class: this.$props.widgetClass
